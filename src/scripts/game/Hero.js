@@ -24,7 +24,7 @@ export class Hero {
     //[/12]
 
     startJump() {
-        if (this.platform || this.jumpIndex === 1) {
+        if (this.platform || this.jumpIndex < this.maxJumps) {
             ++this.jumpIndex;
             this.platform = null;
             Matter.Body.setVelocity(this.body, { x: 0, y: -this.dy });
@@ -49,7 +49,7 @@ export class Hero {
         this.sprite.y = this.body.position.y - this.sprite.height / 2;
 
         // [14]
-        if (this.sprite.y > window.innerHeight) {
+        if (this.sprite.y > window.innerHeight || this.sprite.x < -this.sprite.width) {
             this.sprite.emit("die");
         }
         // [/14]
