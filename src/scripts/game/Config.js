@@ -1,6 +1,7 @@
 import { Tools } from "../system/Tools";
 import { GameScene } from "./GameScene";
 import { StartScene } from "./StartScene";
+import { GameOverScene } from "./GameOverScene";
 
 export const Config = {
     loader: Tools.massiveRequire(require["context"]('./../../sprites/', true, /\.(mp3|png|jpe?g)$/)),
@@ -20,6 +21,7 @@ export const Config = {
         x: 10,
         y: 75,
         pr: 0,
+        newRecord: false,
         anchor: (1, 0),
         style: {
             fontFamily: "Verdana",
@@ -63,5 +65,6 @@ export const Config = {
     scenes: {
         "Start": StartScene,
         "Game": GameScene,
+        "GameOver": GameOverScene
     }
 };

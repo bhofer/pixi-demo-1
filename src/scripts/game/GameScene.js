@@ -64,7 +64,8 @@ export class GameScene extends Scene {
             if (this.hero.score > App.config.highscore.pr){
                 App.config.highscore.newRecord = true;
                 App.config.highscore.pr = this.hero.score;
-            App.scenes.start("Game");
+            }
+            App.scenes.start("GameOver");
         });
         // [/14]
     }
