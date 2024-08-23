@@ -61,7 +61,8 @@ export class GameScene extends Scene {
 
         // [14]
         this.hero.sprite.once("die", () => {
-            if (this.hero.score > App.config.highscore.pr)
+            if (this.hero.score > App.config.highscore.pr){
+                App.config.highscore.newRecord = true;
                 App.config.highscore.pr = this.hero.score;
             App.scenes.start("Game");
         });

@@ -42,7 +42,7 @@ class Application {
     }
 
     start() {
-        this.scenes.start("Game");
+        this.scenes.start("Start");
     }
 }
 

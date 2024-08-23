@@ -1,5 +1,6 @@
 import { Tools } from "../system/Tools";
 import { GameScene } from "./GameScene";
+import { StartScene } from "./StartScene";
 
 export const Config = {
     loader: Tools.massiveRequire(require["context"]('./../../sprites/', true, /\.(mp3|png|jpe?g)$/)),
@@ -60,6 +61,7 @@ export const Config = {
         }
     },
     scenes: {
-        "Game": GameScene
+        "Start": StartScene,
+        "Game": GameScene,
     }
 };
