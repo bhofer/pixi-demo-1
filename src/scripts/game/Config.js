@@ -15,6 +15,18 @@ export const Config = {
             fill: ["#FF7F50"]
         }
     },
+    highscore: {
+        x: 10,
+        y: 75,
+        pr: 0,
+        anchor: (1, 0),
+        style: {
+            fontFamily: "Verdana",
+            fontWeight: "bold",
+            fontSize: 44,
+            fill: ["#42654D"]
+        }
+    },
     diamonds: {
         chance: 0.4,
         offset: {

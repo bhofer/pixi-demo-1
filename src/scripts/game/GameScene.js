@@ -1,5 +1,6 @@
 import * as Matter from 'matter-js';
 import { LabelScore } from "./LabelScore";
+import { LabelHighScore } from "./LabelHighScore";
 import { App } from '../system/App';
 import { Background } from "./Background";
 import { Scene } from '../system/Scene';
@@ -23,6 +24,9 @@ export class GameScene extends Scene {
         this.hero.sprite.on("score", () => {
             this.labelScore.renderScore(this.hero.score);
         });
+
+        this.labelHighScore = new LabelHighScore();
+        this.container.addChild(this.labelHighScore);
     }
     //[13]
 
@@ -57,6 +61,8 @@ export class GameScene extends Scene {
 
         // [14]
         this.hero.sprite.once("die", () => {
+            if (this.hero.score > App.config.highscore.pr)
+                App.config.highscore.pr = this.hero.score;
             App.scenes.start("Game");
         });
         // [/14]
@@ -84,5 +90,6 @@ export class GameScene extends Scene {
         this.hero.destroy();
         this.platfroms.destroy();
         this.labelScore.destroy();
+        this.labelHighScore.destroy();
     }
 }
